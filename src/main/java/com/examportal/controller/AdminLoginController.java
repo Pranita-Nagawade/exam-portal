@@ -27,11 +27,14 @@ public class AdminLoginController {
 //		}
 
 	@RequestMapping(value = "/adminLoginSubmit", method = RequestMethod.POST)
-	public String validation(@Valid @ModelAttribute("adminLoginSubmit") AdminLogin adminLogin, BindingResult br) {
+	public String validation(@Valid @ModelAttribute("adminLoginSubmit") AdminLogin adminLogin, BindingResult br)
+	{
 		if (br.hasErrors()) {
 			return "errorpage";
 		} else {
 			return "home";
 		}
 	}
+	
+	
 }
